@@ -1,0 +1,157 @@
+<div class="card sticky-top">
+    <div class="wrapper">
+        <div class="selec-btn">
+            <span>Select Customer</span>
+            <i class="uil uil-angle-douwn"></i>
+        </div>
+        <div class="content">
+            <div class="Search">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <ul class="option"></ul>
+        </div>
+    </div>
+</div>
+
+<!-- Display -->
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>QUOTATION</h2>
+                    </div>
+                    <div class="col-sm-6 d-print-none">
+                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
+                                class="material-icons">&#xE147;</i> <span>เพิ่ม</span></a>
+                        <a (click)="printPage()" class="btn btn-success" data-toggle="modal"><i
+                                class="fas fa-print">&#xE147;</i>
+                            <span>พิมพ์</span></a>
+                    </div>
+                    <!--<input class="form-control d-print-none" type="text" name="firstName" [(ngModel)]="cus_name"
+                        (ngModelChange)="Search()" placeholder="Enter Customer Name to Search">-->
+                </div>
+            </div>
+
+            <div class="container ">
+                <div class="row">
+                    <div class="col-sm-8 text-left">
+                        <div>
+                            <h2>All Quality Packaging Co.,Ltd.</h2>
+                            <p>101/62/16 Navanakorn Indus., Est. Moo. 20, <br />
+                                Soi 5/4 Phaholyothin Rd., Khlong Nueng, <br />
+                                Khlong Luang, Pathumtani, 12120, THAILAND</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 text-right">
+                        <div>
+                            <p>
+                                DATE : <br />
+                                QUOTE NO : <br />
+                                CUSTOMER ID : <br />
+                                PAGE : </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 text-left">
+                        <div>
+                            <p>
+                                15-Jul-23 <br />
+                                #003 <br />
+                                ACV : <br />
+                                1/1 :
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2 text-left">
+                <div>
+                    <p>
+                        CUSTOMER <br />
+                        Company : {{model.cus_name}}<br />
+                        Attn : {{model.cus_picName}}<br />
+                        CC : {{model.cus_email}}
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div>
+                <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <p></p>
+                                </th>
+                                <th>Part No.</th>
+                                <th>Part Name</th>
+                                <th>MOQ</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                                <th class="d-print-none">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data">
+                                <td>
+                                    <p></p>
+                                </td>
+                                <td>{{item.cus_name}}</td>
+                                <td>{{item.cus_picName}}</td>
+                                <td>{{item.cus_tel}}</td>
+                                <td>{{item.cus_email}}</td>
+                                <td>{{item.cus_address}}</td>
+                                <td class="d-print-none">
+                                    <a href="#editCustomerModal" (click)="onEdit(item)" class="edit"
+                                        data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
+                                            title="Edit">&#xE254;</i></a>
+                                    <a href="#deleteCustomerModal" (click)="onDelete(item)" class="delete"
+                                        data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
+                                            title="Delete">&#xE872;</i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <p>REMARK</p>
+                        <p>This price not yet include VAT7%<br />
+                            MOQ : As detail <br />
+                            Term of Payment : <br />
+                            Leadtime : 15 Day</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container ">
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                        <div>
+                            <p>Best regards,
+                            <h3>Kongaek S.</h3>
+                            <p>Mr. Kongek Seangpo<br />
+                                Sales Representtative <br />
+                                097-0564845</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <div>
+                            <p>
+                            <h5>Contact AQP Team</h5>
+                            <p>Sale & After Service : Mr. Kongek - 096-953-1213<br />
+                                Product & Delivery : Mr. Chaweewan - 096-953-1213 <br />
+                                Document & Billing : Mr. Pannida - 096-953-1213</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

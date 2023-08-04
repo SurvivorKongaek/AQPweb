@@ -1,0 +1,75 @@
+button {
+  width: 120px;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  padding: 20 px;
+}
+
+
+input {
+  width: auto;
+  background-color: #fff;
+  border: none;
+  height: 30px;
+}
+
+.container1 {
+  width: 550px;
+  height: 200px;
+  padding-top: 20px;
+  overflow: scroll;
+  overflow: hidden;
+
+}
+
+/* th{
+
+} */
+
+.title1{
+  text-align: left;
+}
+
+.column1 {
+  /* float: left; */
+  width: 100%;
+  padding: 50px;
+  /* background-color: bisque; */
+}
+
+.column2 {
+  /* float: left; */
+  width: 100%;
+  padding: 50px;
+  /* background-color: azure; */
+
+}
+
+.column3 {
+  /* float: left; */
+  width: 100%;
+  padding: 50px;
+  /* background-color:cornsilk; */
+}
+
+h2 {
+  padding: 10px;
+}
+
+p {
+  font-size: small;
+}
+
+input,
+select {
+  background-color: rgb(188, 200, 200);
+}
+
+table {
+  font-size: 15px;
+  height: 25%;
+  width: auto;
+  /* overflow: scroll; */
+}
+

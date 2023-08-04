@@ -1,1 +1,52 @@
-<p>get-user works!</p>
+<!-- Display -->
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>User Details</h2>
+          </div>
+          <div class="col-sm-6">
+            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
+                class="material-icons">&#xE147;</i> <span>เพิ่ม</span></a>
+          </div>
+          <input class="form-control" type="text" name="firstName" [(ngModel)]="username" (ngModelChange)="Search()"
+            placeholder="Enter Username to Search">
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>
+              <p></p>
+            </th>
+            <th>User Name</th>
+            <th>Password</th>
+            <th>Position ID</th>
+            <th>Position Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of  data ">
+            <td>
+              <p></p>
+            </td>
+            <td>{{item.username}}</td>
+            <td>{{item.password}}</td>
+            <td>{{item.posId}}</td>
+            <td>{{item.status}}</td>
+            <td>
+              <a href="#editEmployeeModal" (click)="onEdit(item)" class="edit" data-toggle="modal"><i
+                  class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+              <a href="#deleteUserModal" (click)="onDelete(item)" class="delete" data-toggle="modal"><i
+                  class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

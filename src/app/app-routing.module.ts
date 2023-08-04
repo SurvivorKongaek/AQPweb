@@ -1,18 +1,24 @@
+
+import { ProductTypeComponent } from './sale/product-type/product-type.component';
+import { RawMaterialComponent } from './sale/raw-material/raw-material.component';
+import { GoodsSaleComponent } from './sale/goods-sale/goods-sale.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './admin/user/user.component';
 import { ManagerComponent } from './manager/manager.component';
-import { CalculateComponent } from './sale/calculate/calculate.component';
-import { CustomerComponent } from './sale/customer/customer.component';
-import { GoodsTypeComponent } from './sale/goods-type/goods-type.component';
-import { RawMaterialComponent } from './sale/raw-material/raw-material.component';
 import { SaleComponent } from './sale/sale.component';
 import { LoginComponent } from './site/login/login.component';
 import { SiteComponent } from './site/site.component';
 import { GoodsComponent } from './store/goods/goods.component';
 import { LocationStoreComponent } from './store/location-store/location-store.component';
 import { StoreComponent } from './store/store.component';
+import { CustomerSaleComponent } from './sale/customer-sale/customer-sale.component';
+import { CalculateSaleComponent } from './sale/calculate-sale/calculate-sale.component';
+import { CutGoodsComponent } from './store/goods/cut-goods/cut-goods.component';
+import { AddGoodsComponent } from './store/goods/add-goods/add-goods.component';
+import { StockFgComponent } from './store/goods/stock-fg/stock-fg.component';
+import { QuotationComponent } from './sale/quotation/quotation.component';
 
 const routes: Routes = [
   {
@@ -23,35 +29,44 @@ const routes: Routes = [
     ]
   },
   {
-    path: '', component: AdminComponent,
+    path: 'admin', component: AdminComponent,
     children: [
       { path: 'user', component: UserComponent },
     ]
   },
   {
-    path: '', component: SaleComponent,
+    path: 'sale', component: SaleComponent,
     children: [
-      { path: 'customer', component: CustomerComponent },
-      { path: 'goods-type', component: GoodsTypeComponent },
-      { path: 'rawmat', component: RawMaterialComponent },
-      { path: 'cal', component: CalculateComponent },
+      { path: 'customer-sale', component: CustomerSaleComponent },
+      { path: 'product-type', component: ProductTypeComponent },
+      { path: 'raw-material', component: RawMaterialComponent },
+      { path: 'goods-sale', component: GoodsSaleComponent },
+      { path: 'calculate', component: CalculateSaleComponent },
+      { path: 'quotation', component: QuotationComponent },
+      { path: 'stock', component: StockFgComponent },
+      { path: '', component: SiteComponent },
     ]
   },
   {
-    path: '', component: StoreComponent,
+    path: 'store', component: StoreComponent,
     children: [
       { path: 'goods', component: GoodsComponent },
-      { path: 'locationStore', component: LocationStoreComponent },
+      { path: 'location-store', component: LocationStoreComponent },
+      { path: 'goods/add-goods', component: AddGoodsComponent },
+      { path: 'goods/cut-goods', component: CutGoodsComponent },
+      { path: 'goods/stockFg', component: StockFgComponent },
+      { path: '', component: SiteComponent },
     ]
   },
-  // {
-  //   path: '', component: ManagerComponent,
-  //   children: [
-  //     { path: 'goods', component: GoodsComponent },
-  //     { path: 'locationStore', component: LocationStoreComponent },
-  //     { path: 'customer', component: CustomerComponent }
-  //   ]
-  // }
+  {
+    path: 'manager', component: ManagerComponent,
+    children: [
+      { path: 'stock', component: StockFgComponent },
+      { path: 'location-store', component: LocationStoreComponent },
+      { path: 'customer-sale', component: CustomerSaleComponent },
+      { path: '', component: SiteComponent },
+    ]
+  }
 
 ];
 

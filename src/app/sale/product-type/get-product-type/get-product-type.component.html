@@ -1,0 +1,49 @@
+<!-- Display -->
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>PRODUCT TYPE</h2>
+          </div>
+          <div class="col-sm-6 d-print-none">
+            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
+                class="material-icons">&#xE147;</i> <span>เพิ่ม</span></a>
+                <a (click)="printPage()" class="btn btn-success" data-toggle="modal"><i
+                  class="fas fa-print">&#xE147;</i> <span>พิมพ์</span></a>
+          </div>
+          <input class="form-control d-print-none" type="text" name="firstName" [(ngModel)]="goodsType_name" (ngModelChange)="Search()"
+          placeholder="Enter Goods Type Name to Search">
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>
+              <p> </p>
+            </th>
+            <th>Goods Type Id</th>
+            <th>Goods Type Name</th>
+            <th class="d-print-none">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td></td>
+            <td>{{item.goodsType_id}}</td>
+            <td>{{item.goodsType_name}}</td>
+
+            <td class="d-print-none">
+              <a href="#editGoodsType" (click)="onEdit(item)" class="edit" data-toggle="modal"><i class="material-icons"
+                  data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+              <a href="#deleteProductTypeModal" (click)="onDelete(item)" class="delete" data-toggle="modal"><i
+                  class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

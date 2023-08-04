@@ -1,1 +1,35 @@
-<p>put-user works!</p>
+<!-- Edit Modal HTML -->
+<div id="editEmployeeModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form (ngSubmit)="onEdit()" [noValidate]="false">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit User</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>User Name</label>
+            <input type="text" class="form-control" [(ngModel)]="model.username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="text" class="form-control" [(ngModel)]="model.password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label>Position ID</label>
+            <input type="number" class="form-control" [(ngModel)]="model.posId" name="posId" required>
+          </div>
+          <div class="form-group">
+            <label>Status</label>
+            <input type="text" class="form-control" [(ngModel)]="model.status" name="status" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+          <input type="submit" class="btn btn-info" value="Save">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

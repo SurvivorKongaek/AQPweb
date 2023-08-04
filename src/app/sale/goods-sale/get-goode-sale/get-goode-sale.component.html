@@ -1,0 +1,53 @@
+<!-- Display -->
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>PRODUCT DETAILS</h2>
+          </div>
+          <div class="col-sm-6 d-print-none">
+            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
+                class="material-icons">&#xE147;</i> <span>เพิ่ม</span></a>
+            <a (click)="printPage()" class="btn btn-success" data-toggle="modal"><i class="fas fa-print">&#xE147;</i>
+              <span>พิมพ์</span></a>
+          </div>
+          <input class="form-control d-print-none" type="text" name="firstName" [(ngModel)]="goods_partNo" (ngModelChange)="Search()"
+            placeholder="Enter part Number to Search">
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>
+              <p></p>
+            </th>
+            <th>Goods Id</th>
+            <th>Part No</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th class="d-print-none">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td>
+              <p></p>
+            </td>
+            <td>{{item.goods_id}}</td>
+            <td>{{item.goods_partNo}}</td>
+            <td>{{item.goods_name}}</td>
+            <td>{{item.goods_price}}</td>
+            <td class="d-print-none">
+              <a href="#editGoodsDetailModal" (click)="onEdit(item)" class="edit" data-toggle="modal"><i
+                  class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+              <a href="#deleteGoodsModal" (click)="onDelete(item)" class="delete" data-toggle="modal"><i
+                  class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
