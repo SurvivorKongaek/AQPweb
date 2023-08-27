@@ -68,7 +68,10 @@ import { GetQuotationComponent } from './sale/quotation/get-quotation/get-quotat
 import { PostQuotationComponent } from './sale/quotation/post-quotation/post-quotation.component';
 import { PutQuotationComponent } from './sale/quotation/put-quotation/put-quotation.component';
 import { DeleteQuotationComponent } from './sale/quotation/delete-quotation/delete-quotation.component';
-import { BlogComponent } from './site/login/blog/blog.component';
+import { PresentComponent } from './present/present.component';
+import { TypeBoxComponent } from './present/type-box/type-box.component';
+import { PaperColourComponent } from './present/paper-colour/paper-colour.component';
+import { NavbarPresentComponent } from './present/navbar-present/navbar-present.component';
 
 
 
@@ -143,7 +146,10 @@ import { BlogComponent } from './site/login/blog/blog.component';
     PostQuotationComponent,
     PutQuotationComponent,
     DeleteQuotationComponent,
-    BlogComponent,
+    PresentComponent,
+    TypeBoxComponent,
+    PaperColourComponent,
+    NavbarPresentComponent,
   ],
   imports: [
     BrowserModule,

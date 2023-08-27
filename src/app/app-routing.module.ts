@@ -19,6 +19,9 @@ import { CutGoodsComponent } from './store/goods/cut-goods/cut-goods.component';
 import { AddGoodsComponent } from './store/goods/add-goods/add-goods.component';
 import { StockFgComponent } from './store/goods/stock-fg/stock-fg.component';
 import { QuotationComponent } from './sale/quotation/quotation.component';
+import { PresentComponent } from './present/present.component';
+import { TypeBoxComponent } from './present/type-box/type-box.component';
+import { PaperColourComponent } from './present/paper-colour/paper-colour.component';
 
 const routes: Routes = [
   {
@@ -44,7 +47,7 @@ const routes: Routes = [
       { path: 'calculate', component: CalculateSaleComponent },
       { path: 'quotation', component: QuotationComponent },
       { path: 'stock', component: StockFgComponent },
-      { path: '', component: SiteComponent },
+      { path: 'Login', component: LoginComponent },
     ]
   },
   {
@@ -55,7 +58,7 @@ const routes: Routes = [
       { path: 'goods/add-goods', component: AddGoodsComponent },
       { path: 'goods/cut-goods', component: CutGoodsComponent },
       { path: 'goods/stockFg', component: StockFgComponent },
-      { path: '', component: SiteComponent },
+      { path: 'Login', component: LoginComponent },
     ]
   },
   {
@@ -64,7 +67,15 @@ const routes: Routes = [
       { path: 'stock', component: StockFgComponent },
       { path: 'location-store', component: LocationStoreComponent },
       { path: 'customer-sale', component: CustomerSaleComponent },
-      { path: '', component: SiteComponent },
+      { path: 'Login', component: LoginComponent },
+    ]
+  },
+  {
+    path: 'present', component: PresentComponent,
+    children: [
+      { path: 'paper', component: PaperColourComponent },
+      { path: 'typebox', component: TypeBoxComponent },
+      { path: 'login', component: LoginComponent },
     ]
   }
 
